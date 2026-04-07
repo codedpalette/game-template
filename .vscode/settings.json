@@ -6,5 +6,19 @@
     "**/.DS_Store": true,
     "**/Thumbs.db": true,
     "**/*.uid": true
-  }
+  },
+  "[gdscript]": {
+    "editor.defaultFormatter": "DoHe.godot-format"
+  },
+  "achilleshr.runonsave": {
+    "commands": [
+      {
+        "match": ".*\\.gdshader$",
+        "cmd": "clang-format -i ${file}"
+      }
+    ]
+  },
+  "godotFormatter.reorderCode": true,
+  "godotFormatter.safe": false,
+  "godotFormatter.linterMaxLineLength": 120
 }
