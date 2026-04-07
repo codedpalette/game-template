@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bggkun4k3bni5"]
+
+[ext_resource type="Script" uid="uid://vwd8f3sxk862" path="res://scenes/ui/splash_screen/splash_screen.gd" id="1_q67my"]
+[ext_resource type="Texture2D" uid="uid://daput5j66exgu" path="res://assets/godot_engine_logo/logo_vertical_color_dark.png" id="2_cmrdu"]
+[ext_resource type="Texture2D" uid="uid://dmanl5y5ij86t" path="res://assets/icon.svg" id="3_yc2u0"]
+
+[node name="SplashScreen" type="Control" unique_id=195451295]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q67my")
+images = Array[Texture2D]([ExtResource("2_cmrdu"), ExtResource("3_yc2u0")])
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=232477821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
