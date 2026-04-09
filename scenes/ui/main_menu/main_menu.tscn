@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bhpk3weh7hvg"]
+
+[ext_resource type="Script" uid="uid://drj74y5ymsa0g" path="res://scenes/ui/main_menu/title_label.gd" id="1_1ch07"]
+
+[node name="MainMenu" type="Control" unique_id=337445114]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContainer" type="MarginContainer" parent="." unique_id=1912048201]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleMargin" type="MarginContainer" parent="MenuContainer" unique_id=1682162865]
+layout_mode = 2
+theme_override_constants/margin_top = 24
+
+[node name="TitleLabel" type="Label" parent="MenuContainer/TitleMargin" unique_id=859147629]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Game template"
+horizontal_alignment = 1
+script = ExtResource("1_1ch07")
+
+[node name="MenuButtonsMargin" type="MarginContainer" parent="MenuContainer" unique_id=688511230]
+layout_mode = 2
+theme_override_constants/margin_top = 136
+theme_override_constants/margin_bottom = 8
+
+[node name="MenuButtonsContainer" type="Control" parent="MenuContainer/MenuButtonsMargin" unique_id=408662988]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MenuButtons" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" unique_id=2094407801]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -104.0
+offset_right = 64.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+vertical = true
+
+[node name="NewGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=1160592471]
+layout_mode = 2
+text = "New Game"
+
+[node name="OptionsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=1623281165]
+layout_mode = 2
+text = "Options"
+
+[node name="CreditsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=1140257752]
+layout_mode = 2
+text = "Credits
+"
+
+[node name="ExitButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=575276157]
+layout_mode = 2
+text = "Exit
+"
