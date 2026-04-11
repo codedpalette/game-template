@@ -5,6 +5,4 @@
 [node name="SceneLoader" type="Node" unique_id=1284238182]
 script = ExtResource("1_p5687")
 loading_screen_path = "uid://cguna272ulq3l"
-debug_enabled = true
 debug_lock_status = 1
-debug_lock_progress = 0.435

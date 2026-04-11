@@ -1,3 +1,4 @@
+class_name SceneLoaderClass
 extends Node
 ## Autoload class for loading scenes with an optional loading screen.
 
