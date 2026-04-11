@@ -32,6 +32,18 @@ func _ready() -> void:
 	_transition_in()
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_released("ui_cancel"):
+		_load_next_scene()
+	elif event.is_action_released("ui_accept") or event.is_action_released("ui_select"):
+		_show_next_image(false)
+
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and not event.is_pressed():
+		_show_next_image(false)
+
+
 func _add_textures_to_container(textures: Array[Texture2D]) -> void:
 	for texture in textures:
 		var texture_rect: TextureRect = TextureRect.new()
