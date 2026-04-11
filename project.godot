@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Game template"
-run/main_scene="uid://1l4m58hpp4dk"
+run/main_scene="uid://bggkun4k3bni5"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"
+
+[autoload]
+
+SceneLoader="*uid://lbnqq53tuky4"
 
 [debug]
 

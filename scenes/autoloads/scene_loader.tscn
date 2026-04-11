@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://lbnqq53tuky4"]
+
+[ext_resource type="Script" uid="uid://d3q2df7hjintg" path="res://scenes/autoloads/scene_loader.gd" id="1_p5687"]
+
+[node name="SceneLoader" type="Node" unique_id=1284238182]
+script = ExtResource("1_p5687")
+loading_screen_path = "uid://cguna272ulq3l"
+debug_enabled = true
+debug_lock_status = 1
+debug_lock_progress = 0.435

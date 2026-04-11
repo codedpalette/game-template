@@ -12,7 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q67my")
+next_scene_path = "uid://bhpk3weh7hvg"
 images = Array[Texture2D]([ExtResource("2_cmrdu"), ExtResource("3_yc2u0")])
+show_loading_screen = true
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=232477821]
 layout_mode = 1
