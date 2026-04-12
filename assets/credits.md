@@ -1,7 +1,6 @@
 ## Collaborators
 
 Based on
-
 ### Godot Game Template
 
 ![Maaack Plugin Icon](/assets/project_template_logo/logo.png)  

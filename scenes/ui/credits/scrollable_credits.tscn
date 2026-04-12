@@ -3,25 +3,24 @@
 [ext_resource type="Script" uid="uid://b7rrdaoxd1nea" path="res://scenes/ui/credits/scrollable_credits.gd" id="1_0uale"]
 [ext_resource type="Script" uid="uid://b1dvaxg8ho16y" path="res://scenes/ui/credits/credits_label.gd" id="2_qslxm"]
 
-[node name="ScrollableCredits" type="Control" unique_id=1836564486]
-layout_mode = 3
+[node name="ScrollableCredits" type="ScrollContainer" unique_id=369774285]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_0uale")
 
 [node name="CreditsLabel" type="RichTextLabel" parent="." unique_id=1982342935]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 bbcode_enabled = true
 text = "[font_size=48]Collaborators[/font_size]
 
+Based on
 [font_size=32]Godot Game Template[/font_size]
 
 [img=80]res:///assets/project_template_logo/logo.png[/img]  
@@ -34,13 +33,13 @@ License: [url=LICENSE.txt]MIT License[/url]
 [font_size=24]Godot Engine Logo[/font_size]
 
 Author: Andrea Calabró  
-Source: [url=https://godotengine.org/press/]godotengine.org : press[/url]  
+Source: [url=https://godotengine.org/press/]godotengine.org/press[/url]  
 License: [url=https://github.com/godotengine/godot/blob/master/LOGO_LICENSE.txt]CC BY 4.0 International[/url]
 
 [font_size=24]Git Logo[/font_size]
 
 Author: [url=https://bsky.app/profile/jasonlong.me]Jason Long[/url]  
-Source: [url=https://git-scm.com/downloads/logos]git-scm.com : logos[/url]  
+Source: [url=https://git-scm.com/downloads/logos]git-scm.com/logos[/url]  
 License: [url=https://creativecommons.org/licenses/by/3.0/]CC BY 3.0[/url]
 
 [font_size=48]Tools[/font_size]
@@ -65,10 +64,11 @@ Author: [url=https://github.com/torvalds]Linus Torvalds[/url]
 Source: [url=https://git-scm.com/downloads]git-scm.com[/url]  
 License: [url=https://opensource.org/licenses/GPL-2.0]GNU General Public License version 2[/url]
 "
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 script = ExtResource("2_qslxm")
 credits_file_path = "res://assets/credits.md"
-h1_font_size = 64
 h2_font_size = 48
 h3_font_size = 32
 h4_font_size = 24
