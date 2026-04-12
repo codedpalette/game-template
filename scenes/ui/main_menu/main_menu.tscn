@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bhpk3weh7hvg"]
 
 [ext_resource type="Script" uid="uid://drj74y5ymsa0g" path="res://scenes/ui/main_menu/title_label.gd" id="1_1ch07"]
+[ext_resource type="Script" uid="uid://bd8m8eh2k1j00" path="res://scenes/ui/main_menu/main_menu.gd" id="1_e8t4i"]
 
 [node name="MainMenu" type="Control" unique_id=337445114]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_e8t4i")
 
 [node name="MenuContainer" type="MarginContainer" parent="." unique_id=1912048201]
 layout_mode = 1
@@ -59,19 +61,23 @@ alignment = 1
 vertical = true
 
 [node name="NewGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=1160592471]
+unique_name_in_owner = true
 layout_mode = 2
 text = "New Game"
 
 [node name="OptionsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=1623281165]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Options"
 
 [node name="CreditsButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=1140257752]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Credits
 "
 
 [node name="ExitButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=575276157]
+unique_name_in_owner = true
 layout_mode = 2
 text = "Exit
 "
