@@ -59,12 +59,9 @@ func _process(_delta: float) -> void:
         ResourceLoader.THREAD_LOAD_LOADED:
             _set_scene_loading_complete()
             _update_progress_messaging()
-        ResourceLoader.THREAD_LOAD_FAILED:
+        ResourceLoader.THREAD_LOAD_FAILED, ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
             _error_message.dialog_text = "Loading Error: %d" % status
             _error_message.popup()
-            set_process(false)
-        ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
-            _hide_popups()
             set_process(false)
 
 

@@ -109,7 +109,7 @@ func _load_next_scene() -> void:
 	var status := SceneLoader.get_status()
 	if status == ResourceLoader.THREAD_LOAD_LOADED:
 		SceneLoader.change_scene_to_resource()
-	elif show_loading_screen: # FIXME: SceneLoader should handle this
+	elif show_loading_screen:
 		SceneLoader.change_scene_to_loading_screen()
 	else:
 		await SceneLoader.scene_loaded

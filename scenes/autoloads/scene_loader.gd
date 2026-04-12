@@ -69,8 +69,6 @@ func get_resource() -> PackedScene:
 
 
 func change_scene_to_resource() -> void:
-	if debug_enabled:
-		return
 	var err := get_tree().change_scene_to_packed(get_resource())
 	if err:
 		push_error("failed to change scenes: %d" % err)
