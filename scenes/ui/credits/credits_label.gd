@@ -39,85 +39,85 @@ const BOLD_HEADING_STRING_REPLACEMENT = "$1[b][font_size=%d]$2[/font_size][/b]"
 
 
 func _ready() -> void:
-	meta_clicked.connect(_on_meta_clicked)
-	if not auto_update:
-		return
-	_set_file_path(credits_file_path)
+    meta_clicked.connect(_on_meta_clicked)
+    if not auto_update:
+        return
+    _set_file_path(credits_file_path)
 
 
 func _load_file(file_path: String) -> String:
-	var file_string := FileAccess.get_file_as_string(file_path)
-	if file_string == null:
-		push_warning("File open error: %s" % FileAccess.get_open_error())
-		return ""
-	return file_string
+    var file_string := FileAccess.get_file_as_string(file_path)
+    if file_string == null:
+        push_warning("File open error: %s" % FileAccess.get_open_error())
+        return ""
+    return file_string
 
 
 func _regex_replace_images(credits: String) -> String:
-	var regex := RegEx.new()
-	var match_string := "!\\[([^\\]]*)\\]\\(([^\\)]*)\\)"
-	var replace_string := ""
-	if not disable_images:
-		replace_string = "res://$2[/img]"
-		if max_image_width:
-			if max_image_height:
-				replace_string = ("[img=%dx%d]" % [max_image_width, max_image_height]) + replace_string
-			else:
-				replace_string = ("[img=%d]" % [max_image_width]) + replace_string
-		else:
-			replace_string = "[img]" + replace_string
-	regex.compile(match_string)
-	return regex.sub(credits, replace_string, true)
+    var regex := RegEx.new()
+    var match_string := "!\\[([^\\]]*)\\]\\(([^\\)]*)\\)"
+    var replace_string := ""
+    if not disable_images:
+        replace_string = "res://$2[/img]"
+        if max_image_width:
+            if max_image_height:
+                replace_string = ("[img=%dx%d]" % [max_image_width, max_image_height]) + replace_string
+            else:
+                replace_string = ("[img=%d]" % [max_image_width]) + replace_string
+        else:
+            replace_string = "[img]" + replace_string
+    regex.compile(match_string)
+    return regex.sub(credits, replace_string, true)
 
 
 func _regex_replace_urls(credits: String) -> String:
-	var regex := RegEx.new()
-	var match_string := "\\[([^\\]]*)\\]\\(([^\\)]*)\\)"
-	var replace_string := "$1"
-	if not disable_urls:
-		replace_string = "[url=$2]$1[/url]"
-	regex.compile(match_string)
-	return regex.sub(credits, replace_string, true)
+    var regex := RegEx.new()
+    var match_string := "\\[([^\\]]*)\\]\\(([^\\)]*)\\)"
+    var replace_string := "$1"
+    if not disable_urls:
+        replace_string = "[url=$2]$1[/url]"
+    regex.compile(match_string)
+    return regex.sub(credits, replace_string, true)
 
 
 func _regex_replace_titles(credits: String) -> String:
-	var iter := 0
-	var heading_font_sizes: Array[int] = [
-		h1_font_size,
-		h2_font_size,
-		h3_font_size,
-		h4_font_size,
-		h5_font_size,
-		h6_font_size,
-	]
-	for heading_font_size in heading_font_sizes:
-		iter += 1
-		var regex := RegEx.new()
-		var match_string: String = "([^#]|^)#{%d}\\s([^\n]*)" % iter
-		var replace_string := HEADING_STRING_REPLACEMENT % [heading_font_size]
-		if bold_headings:
-			replace_string = BOLD_HEADING_STRING_REPLACEMENT % [heading_font_size]
-		regex.compile(match_string)
-		credits = regex.sub(credits, replace_string, true)
-	return credits
+    var iter := 0
+    var heading_font_sizes: Array[int] = [
+        h1_font_size,
+        h2_font_size,
+        h3_font_size,
+        h4_font_size,
+        h5_font_size,
+        h6_font_size,
+    ]
+    for heading_font_size in heading_font_sizes:
+        iter += 1
+        var regex := RegEx.new()
+        var match_string: String = "([^#]|^)#{%d}\\s([^\n]*)" % iter
+        var replace_string := HEADING_STRING_REPLACEMENT % [heading_font_size]
+        if bold_headings:
+            replace_string = BOLD_HEADING_STRING_REPLACEMENT % [heading_font_size]
+        regex.compile(match_string)
+        credits = regex.sub(credits, replace_string, true)
+    return credits
 
 
 func _set_file_path(file_path: String) -> void:
-	credits_file_path = file_path
-	_update_text_from_file()
+    credits_file_path = file_path
+    _update_text_from_file()
 
 
 func _update_text_from_file() -> void:
-	var file_text: String = _load_file(credits_file_path)
-	if file_text == "":
-		return
-	var _end_of_first_line := file_text.find("\n") + 1
-	file_text = _regex_replace_images(file_text)
-	file_text = _regex_replace_urls(file_text)
-	file_text = _regex_replace_titles(file_text)
-	text = file_text
+    var file_text: String = _load_file(credits_file_path)
+    if file_text == "":
+        return
+    var _end_of_first_line := file_text.find("\n") + 1
+    file_text = _regex_replace_images(file_text)
+    file_text = _regex_replace_urls(file_text)
+    file_text = _regex_replace_titles(file_text)
+    text = file_text
 
 
 func _on_meta_clicked(meta: String) -> void:
-	if meta.begins_with("https://") and not disable_opening_links:
-		OS.shell_open(meta)
+    if meta.begins_with("https://") and not disable_opening_links:
+        OS.shell_open(meta)

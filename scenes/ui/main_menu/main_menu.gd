@@ -12,28 +12,28 @@ extends Control
 
 
 func _ready() -> void:
-	_hide_exit_for_web()
-	_hide_options_if_unset()
-	_hide_credits_if_unset()
-	_hide_new_game_if_unset()
+    _hide_exit_for_web()
+    _hide_options_if_unset()
+    _hide_credits_if_unset()
+    _hide_new_game_if_unset()
 
 
 func _hide_exit_for_web() -> void:
-	if OS.has_feature("web"):
-		_exit_button.hide()
+    if OS.has_feature("web"):
+        _exit_button.hide()
 
 
 func _hide_new_game_if_unset() -> void:
-	pass
-	# if get_game_scene_path().is_empty():
-	# 	_new_game_button.hide()
+    pass
+    # if get_game_scene_path().is_empty():
+    # 	_new_game_button.hide()
 
 
 func _hide_options_if_unset() -> void:
-	if options_packed_scene == null:
-		_options_button.hide()
+    if options_packed_scene == null:
+        _options_button.hide()
 
 
 func _hide_credits_if_unset() -> void:
-	if credits_packed_scene == null:
-		_credits_button.hide()
+    if credits_packed_scene == null:
+        _credits_button.hide()

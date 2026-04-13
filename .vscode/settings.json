@@ -18,6 +18,7 @@
       }
     ]
   },
+  "godotFormatter.useSpaces": true,
   "godotFormatter.reorderCode": true,
   "godotFormatter.safe": false,
   "godotFormatter.linterMaxLineLength": 120
