@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://cwcqulhvl1270"]
+
+[ext_resource type="Script" uid="uid://wbol6w5lht24" path="res://scenes/ui/overlays/window_container.gd" id="1_3xq4i"]
+[ext_resource type="Script" uid="uid://cjnjwvn5nww7j" path="res://scenes/ui/capture_focus.gd" id="2_2x1aj"]
+
+[node name="WindowContainer" type="PanelContainer" unique_id=1092497120]
+process_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -50.0
+offset_right = 80.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_3xq4i")
+
+[node name="ContentContainer" type="MarginContainer" parent="." unique_id=1061531676]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="BoxContainer" type="BoxContainer" parent="ContentContainer" unique_id=1940397791]
+layout_mode = 2
+vertical = true
+
+[node name="TitleMargin" type="MarginContainer" parent="ContentContainer/BoxContainer" unique_id=143114414]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/margin_left = -14
+theme_override_constants/margin_top = -14
+theme_override_constants/margin_right = -14
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="BoxContainer" parent="ContentContainer/BoxContainer/TitleMargin" unique_id=1348652280]
+layout_mode = 2
+theme_override_constants/separation = 0
+vertical = true
+
+[node name="TitleLabel" type="Label" parent="ContentContainer/BoxContainer/TitleMargin/VBoxContainer" unique_id=1776144435]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="ContentContainer/BoxContainer/TitleMargin/VBoxContainer" unique_id=504397486]
+layout_mode = 2
+
+[node name="BodyMargin" type="MarginContainer" parent="ContentContainer/BoxContainer" unique_id=315706862]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="ContentContainer/BoxContainer/BodyMargin" unique_id=1893548125]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButtonsMargin" type="MarginContainer" parent="ContentContainer/BoxContainer" unique_id=1036322541]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="MenuButtons" type="BoxContainer" parent="ContentContainer/BoxContainer/MenuButtonsMargin" unique_id=30173741]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+vertical = true
+script = ExtResource("2_2x1aj")
+
+[node name="CloseButton" type="Button" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" unique_id=1301493414]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"
+
+[connection signal="pressed" from="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/CloseButton" to="." method="_on_close_button_pressed"]
