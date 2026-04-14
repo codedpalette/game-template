@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dyr5eybgqwiv5"]
+
+[ext_resource type="Script" uid="uid://6rtqiah68x5h" path="res://scenes/game/world.gd" id="1_g5t8f"]
+[ext_resource type="Texture2D" uid="uid://dmanl5y5ij86t" path="res://assets/icon.svg" id="1_t4al5"]
+
+[node name="World" type="Node2D" unique_id=997867853]
+script = ExtResource("1_g5t8f")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2056025584]
+texture_filter = 6
+position = Vector2(640, 360)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_t4al5")
