@@ -43,6 +43,15 @@ signal opened
 @onready var menu_buttons: BoxContainer = %MenuButtons
 
 
+func _enter_tree() -> void:
+    if Engine.is_editor_hint():
+        return
+    if not visibility_changed.is_connected(_on_visibility_changed):
+        visibility_changed.connect(_on_visibility_changed)
+    if is_visible_in_tree():
+        _on_window_shown()
+
+
 func _ready() -> void:
     # Run properties setters
     text = text
@@ -55,7 +64,7 @@ func _ready() -> void:
 func _exit_tree() -> void:
     if Engine.is_editor_hint():
         return
-    close()
+    _on_window_hidden()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -64,24 +73,24 @@ func _unhandled_input(event: InputEvent) -> void:
         get_viewport().set_input_as_handled()
 
 
-func close() -> void:
-    if not visible:
-        return
-    hide()
-    closed.emit()
+func _on_visibility_changed() -> void:
+    if is_visible_in_tree():
+        _on_window_shown()
+    else:
+        _on_window_hidden()
 
 
-func open() -> void:
-    if visible:
-        return
-    # FIXME: This doesn't work when creating a new container
-    show()
+func _on_window_shown() -> void:
     opened.emit()
 
 
+func _on_window_hidden() -> void:
+    closed.emit()
+
+
 func _handle_cancel_input() -> void:
-    close()
+    hide()
 
 
 func _on_close_button_pressed() -> void:
-    close()
+    hide()

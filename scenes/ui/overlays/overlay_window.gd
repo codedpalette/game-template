@@ -23,26 +23,20 @@ var _exclusive_control_node: ColorRect
 
 func _enter_tree() -> void:
     _scene_tree = get_tree()
-    if not visibility_changed.is_connected(_on_visibility_changed):
-        visibility_changed.connect(_on_visibility_changed)
-    _on_visibility_changed()
+    super._enter_tree()
 
 
-func close() -> void:
-    if not visible:
-        return
+func _on_window_shown() -> void:
+    _overlay_window_setup()
+    super._on_window_shown()
+
+
+func _on_window_hidden() -> void:
     _overlay_window_teardown()
-    super.close()
-
-
-func _on_visibility_changed() -> void:
-    if is_visible_in_tree():
-        _overlay_window_setup()
+    super._on_window_hidden()
 
 
 func _overlay_window_setup() -> void:
-    # May not work, see https://github.com/Maaack/Godot-Game-Template/issues/457
-    # FIXME: Verify this with pause menu
     if _scene_tree:
         _initial_pause_state = _scene_tree.paused
     _initial_mouse_mode = Input.mouse_mode
@@ -55,7 +49,8 @@ func _overlay_window_setup() -> void:
     if makes_mouse_visible:
         Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
     if exclusive:
-        _unset_focus_modes(_scene_tree.current_scene)
+        if _scene_tree.current_scene != self:
+            _unset_focus_modes(_scene_tree.current_scene)
         _exclusive_control_node = ColorRect.new()
         _exclusive_control_node.name = self.name + "ExclusiveControl"
         _exclusive_control_node.color = exclusive_background_color
