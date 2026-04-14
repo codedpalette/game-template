@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cy4dcwfhv3u4u"]
+
+[ext_resource type="PackedScene" uid="uid://c6nyosfdgogr3" path="res://scenes/ui/overlays/overlay_window.tscn" id="1_dkbtk"]
+[ext_resource type="Script" uid="uid://13ejhtbycns3" path="res://scenes/ui/overlays/overlay_confirmation.gd" id="2_68xx0"]
+
+[node name="OverlayConfirmation" unique_id=1092497120 instance=ExtResource("1_dkbtk")]
+script = ExtResource("2_68xx0")
+confirm_button_text = "Confirm"
+close_button_text = "Cancel"
+
+[node name="MenuButtons" parent="ContentContainer/BoxContainer/MenuButtonsMargin" parent_id_path=PackedInt32Array(1036322541) index="0" unique_id=30173741]
+vertical = false
+
+[node name="CloseButton" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" index="0" unique_id=1301493414]
+text = "Cancel"
+
+[node name="ConfirmButton" type="Button" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" index="1" unique_id=224136719]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Confirm"
+
+[connection signal="pressed" from="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/ConfirmButton" to="." method="_on_confirm_button_pressed"]
