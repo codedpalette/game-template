@@ -1,3 +1,4 @@
+class_name CaptureFocus
 extends Control
 ## Node that captures UI focus when switching menus.
 ##

@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://drj74y5ymsa0g" path="res://scenes/ui/main_menu/title_label.gd" id="1_1ch07"]
 [ext_resource type="Script" uid="uid://bd8m8eh2k1j00" path="res://scenes/ui/main_menu/main_menu.gd" id="1_e8t4i"]
+[ext_resource type="PackedScene" uid="uid://l57kwlpw55cu" path="res://scenes/ui/main_menu/main_menu_credits.tscn" id="2_qt1dd"]
+[ext_resource type="PackedScene" uid="uid://cy4dcwfhv3u4u" path="res://scenes/ui/overlays/overlay_confirmation.tscn" id="4_cmwxi"]
+[ext_resource type="Script" uid="uid://cjnjwvn5nww7j" path="res://scenes/ui/capture_focus.gd" id="4_r70wa"]
 
 [node name="MainMenu" type="Control" unique_id=337445114]
 layout_mode = 3
@@ -11,8 +14,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e8t4i")
+game_scene_path = "uid://dyr5eybgqwiv5"
+credits_packed_scene = ExtResource("2_qt1dd")
 
 [node name="MenuContainer" type="MarginContainer" parent="." unique_id=1912048201]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,6 +48,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="MenuButtons" type="BoxContainer" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer" unique_id=2094407801]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -59,6 +66,7 @@ size_flags_vertical = 4
 theme_override_constants/separation = 16
 alignment = 1
 vertical = true
+script = ExtResource("4_r70wa")
 
 [node name="NewGameButton" type="Button" parent="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons" unique_id=1160592471]
 unique_name_in_owner = true
@@ -81,3 +89,16 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Exit
 "
+
+[node name="ExitConfirmation" parent="." unique_id=1092497120 instance=ExtResource("4_cmwxi")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+ui_cancel_closes = false
+text = "Really exit the game?"
+
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="MenuContainer/MenuButtonsMargin/MenuButtonsContainer/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="confirmed" from="ExitConfirmation" to="." method="_on_exit_confirmation_confirmed"]
