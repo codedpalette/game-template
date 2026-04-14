@@ -23,17 +23,17 @@ var _exclusive_control_node: ColorRect
 
 func _enter_tree() -> void:
     _scene_tree = get_tree()
-    super._enter_tree()
+    super()
 
 
 func _on_window_shown() -> void:
     _overlay_window_setup()
-    super._on_window_shown()
+    super()
 
 
 func _on_window_hidden() -> void:
     _overlay_window_teardown()
-    super._on_window_hidden()
+    super()
 
 
 func _overlay_window_setup() -> void:

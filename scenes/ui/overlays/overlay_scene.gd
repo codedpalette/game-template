@@ -18,4 +18,5 @@ var _instance: Node
 
 
 func _ready() -> void:
+    super()
     packed_scene = packed_scene

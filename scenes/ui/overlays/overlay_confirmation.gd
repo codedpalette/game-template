@@ -14,6 +14,7 @@ signal confirmed
 
 
 func _ready() -> void:
+    super()
     confirm_button_text = confirm_button_text
 
 
