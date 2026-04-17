@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 
 
 func _on_visibility_changed() -> void:
-    if visible:
+    if is_visible_in_tree():
         _scroll_position = 0
         scroll_vertical = 0
         credits_label.grab_focus()
