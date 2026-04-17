@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyr5eybgqwiv5"]
 
-[ext_resource type="Script" uid="uid://6rtqiah68x5h" path="res://scenes/game/world.gd" id="1_g5t8f"]
+[ext_resource type="Script" uid="uid://6rtqiah68x5h" path="res://game/world.gd" id="1_g5t8f"]
 [ext_resource type="Texture2D" uid="uid://dmanl5y5ij86t" path="res://assets/icon.svg" id="1_t4al5"]
 
 [node name="World" type="Node2D" unique_id=997867853]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6nyosfdgogr3"]
 
-[ext_resource type="PackedScene" uid="uid://cwcqulhvl1270" path="res://scenes/ui/overlays/window_container.tscn" id="1_5cypy"]
-[ext_resource type="Script" uid="uid://dh6od4q8bb4ar" path="res://scenes/ui/overlays/overlay_window.gd" id="2_gyt24"]
+[ext_resource type="PackedScene" uid="uid://cwcqulhvl1270" path="res://ui/overlays/window_container.tscn" id="1_5cypy"]
+[ext_resource type="Script" uid="uid://dh6od4q8bb4ar" path="res://ui/overlays/overlay_window.gd" id="2_gyt24"]
 
 [node name="OverlayWindow" unique_id=1092497120 instance=ExtResource("1_5cypy")]
 process_mode = 0

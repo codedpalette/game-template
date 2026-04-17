@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://l57kwlpw55cu"]
 
-[ext_resource type="PackedScene" uid="uid://csfv7nmw6q1me" path="res://scenes/ui/overlays/overlay_scene.tscn" id="1_116hl"]
-[ext_resource type="PackedScene" uid="uid://ct7qujj3joe7" path="res://scenes/ui/credits/scrollable_credits.tscn" id="2_7lpe4"]
+[ext_resource type="PackedScene" uid="uid://csfv7nmw6q1me" path="res://ui/overlays/overlay_scene.tscn" id="1_116hl"]
+[ext_resource type="PackedScene" uid="uid://ct7qujj3joe7" path="res://ui/credits/scrollable_credits.tscn" id="2_7lpe4"]
 
 [node name="MainMenuCredits" unique_id=1092497120 instance=ExtResource("1_116hl")]
 anchors_preset = 15
@@ -15,9 +15,6 @@ offset_right = 0.0
 offset_bottom = 0.0
 packed_scene = ExtResource("2_7lpe4")
 close_button_text = "Back"
-
-[node name="TitleMargin" parent="ContentContainer/BoxContainer" parent_id_path=PackedInt32Array(1940397791) index="0" unique_id=143114414]
-visible = false
 
 [node name="CloseButton" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(30173741) index="0" unique_id=1301493414]
 size_flags_horizontal = 0

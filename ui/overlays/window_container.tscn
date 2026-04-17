@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwcqulhvl1270"]
 
-[ext_resource type="Script" uid="uid://wbol6w5lht24" path="res://scenes/ui/overlays/window_container.gd" id="1_3xq4i"]
-[ext_resource type="Script" uid="uid://cjnjwvn5nww7j" path="res://scenes/ui/capture_focus.gd" id="2_2x1aj"]
+[ext_resource type="Script" uid="uid://wbol6w5lht24" path="res://ui/overlays/window_container.gd" id="1_3xq4i"]
+[ext_resource type="Script" uid="uid://cjnjwvn5nww7j" path="res://ui/capture_focus.gd" id="2_2x1aj"]
 
 [node name="WindowContainer" type="PanelContainer" unique_id=1092497120]
 process_mode = 3

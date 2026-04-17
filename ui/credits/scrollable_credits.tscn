@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ct7qujj3joe7"]
 
-[ext_resource type="Script" uid="uid://b7rrdaoxd1nea" path="res://scenes/ui/credits/scrollable_credits.gd" id="1_0uale"]
-[ext_resource type="Script" uid="uid://b1dvaxg8ho16y" path="res://scenes/ui/credits/credits_label.gd" id="2_qslxm"]
+[ext_resource type="Script" uid="uid://b7rrdaoxd1nea" path="res://ui/credits/scrollable_credits.gd" id="1_0uale"]
+[ext_resource type="Script" uid="uid://b1dvaxg8ho16y" path="res://ui/credits/credits_label.gd" id="2_qslxm"]
 
 [node name="ScrollableCredits" type="ScrollContainer" unique_id=369774285]
 anchors_preset = 15

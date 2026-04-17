@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bhpk3weh7hvg"]
 
-[ext_resource type="Script" uid="uid://drj74y5ymsa0g" path="res://scenes/ui/main_menu/title_label.gd" id="1_1ch07"]
-[ext_resource type="Script" uid="uid://bd8m8eh2k1j00" path="res://scenes/ui/main_menu/main_menu.gd" id="1_e8t4i"]
-[ext_resource type="PackedScene" uid="uid://l57kwlpw55cu" path="res://scenes/ui/main_menu/main_menu_credits.tscn" id="2_qt1dd"]
-[ext_resource type="PackedScene" uid="uid://cy4dcwfhv3u4u" path="res://scenes/ui/overlays/overlay_confirmation.tscn" id="4_cmwxi"]
-[ext_resource type="Script" uid="uid://cjnjwvn5nww7j" path="res://scenes/ui/capture_focus.gd" id="4_r70wa"]
+[ext_resource type="Script" uid="uid://drj74y5ymsa0g" path="res://ui/main_menu/title_label.gd" id="1_1ch07"]
+[ext_resource type="Script" uid="uid://bd8m8eh2k1j00" path="res://ui/main_menu/main_menu.gd" id="1_e8t4i"]
+[ext_resource type="PackedScene" uid="uid://l57kwlpw55cu" path="res://ui/main_menu/main_menu_credits.tscn" id="2_qt1dd"]
+[ext_resource type="PackedScene" uid="uid://cy4dcwfhv3u4u" path="res://ui/overlays/overlay_confirmation.tscn" id="4_cmwxi"]
+[ext_resource type="Script" uid="uid://cjnjwvn5nww7j" path="res://ui/capture_focus.gd" id="4_r70wa"]
 
 [node name="MainMenu" type="Control" unique_id=337445114]
 layout_mode = 3

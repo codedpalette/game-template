@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cguna272ulq3l"]
 
-[ext_resource type="Script" uid="uid://beteqj6mgkir1" path="res://scenes/ui/loading_screen/loading_screen.gd" id="1_vwscl"]
+[ext_resource type="Script" uid="uid://beteqj6mgkir1" path="res://ui/loading_screen/loading_screen.gd" id="1_vwscl"]
 
 [node name="LoadingScreen" type="CanvasLayer" unique_id=932950800]
 process_mode = 3
