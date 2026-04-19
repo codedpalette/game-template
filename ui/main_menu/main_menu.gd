@@ -2,8 +2,6 @@ extends Control
 
 signal sub_menu_opened
 signal sub_menu_closed
-signal game_started
-signal game_exited
 
 ## Defines the path to the game scene. Hides the play button if empty.
 @export_file("*.tscn") var game_scene_path: String
@@ -12,11 +10,7 @@ signal game_exited
 ## The scene to open when a player clicks the 'Credits' button.
 @export var credits_packed_scene: PackedScene
 @export var confirm_exit: bool = true
-@export_group("Extra Settings")
-## If true, signals that the game has started loading in the background, instead of directly loading it.
-@export var signal_game_start: bool = false
-## If true, signals that the player clicked the 'Exit' button, instead of immediately exiting.
-@export var signal_game_exit: bool = false
+@export var show_loading_screen: bool = false
 
 var _sub_menu: Control
 
@@ -53,11 +47,12 @@ func get_game_scene_path() -> String:
 
 
 func load_game_scene() -> void:
-    if signal_game_start:
-        SceneLoader.load_scene(get_game_scene_path(), true)
-        game_started.emit()
-    else:
+    if show_loading_screen:
         SceneLoader.load_scene(get_game_scene_path())
+    else:
+        SceneLoader.load_scene(get_game_scene_path(), true)
+        await SceneLoader.scene_loaded
+        SceneLoader.change_scene_to_resource()
 
 
 func new_game() -> void:
@@ -74,10 +69,7 @@ func try_exit_game() -> void:
 func exit_game() -> void:
     if OS.has_feature("web"):
         return
-    if signal_game_exit:
-        game_exited.emit()
-    else:
-        get_tree().quit()
+    get_tree().quit()
 
 
 func _hide_new_game_if_unset() -> void:
