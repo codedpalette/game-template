@@ -61,7 +61,8 @@ func _overlay_window_setup() -> void:
 
 
 func _overlay_window_teardown() -> void:
-    _scene_tree.paused = _initial_pause_state
+    if pauses_game:
+        _scene_tree.paused = _initial_pause_state    
     Input.mouse_mode = _initial_mouse_mode
     _restore_focus_modes()
     if is_instance_valid(_initial_focus_control) and _initial_focus_control.is_inside_tree():
@@ -79,7 +80,7 @@ func _unset_focus_modes(node: Node) -> void:
         if control:
             _initial_node_focus_modes[control] = control.focus_mode
             control.focus_mode = Control.FOCUS_NONE
-        _unset_focus_modes(control)
+        _unset_focus_modes(child)
 
 
 func _restore_focus_modes() -> void:

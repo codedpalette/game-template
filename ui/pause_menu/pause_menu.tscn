@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://doupxnmle4065"]
+
+[ext_resource type="PackedScene" uid="uid://c6nyosfdgogr3" path="res://ui/overlays/overlay_window.tscn" id="1_mnjdh"]
+[ext_resource type="Script" uid="uid://chvhhr1mhkg0h" path="res://ui/pause_menu/pause_menu.gd" id="2_jbgdu"]
+[ext_resource type="PackedScene" uid="uid://cy4dcwfhv3u4u" path="res://ui/overlays/overlay_confirmation.tscn" id="3_le02u"]
+
+[node name="PauseMenu" unique_id=1092497120 instance=ExtResource("1_mnjdh")]
+process_mode = 3
+custom_minimum_size = Vector2(256, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource("2_jbgdu")
+options_menu_scene = null
+main_menu_scene_path = "uid://bhpk3weh7hvg"
+pauses_game = true
+close_button_text = "Resume"
+title = "Paused"
+
+[node name="TitleLabel" parent="ContentContainer/BoxContainer/TitleMargin/VBoxContainer" parent_id_path=PackedInt32Array(1348652280) index="0" unique_id=1776144435]
+text = "Paused"
+
+[node name="BodyMargin" parent="ContentContainer/BoxContainer" parent_id_path=PackedInt32Array(1940397791) index="1" unique_id=315706862]
+visible = false
+
+[node name="MenuButtonsMargin" parent="ContentContainer/BoxContainer" parent_id_path=PackedInt32Array(1940397791) index="2" unique_id=1036322541]
+size_flags_vertical = 3
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="CloseButton" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(30173741) index="0" unique_id=1301493414]
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(30173741) index="1" unique_id=983800239]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Restart"
+
+[node name="OptionsButton" type="Button" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(30173741) index="2" unique_id=1793009707]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Options"
+
+[node name="MainMenuButton" type="Button" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(30173741) index="3" unique_id=989849628]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main Menu"
+
+[node name="ExitButton" type="Button" parent="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons" parent_id_path=PackedInt32Array(30173741) index="4" unique_id=196917993]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit Game"
+
+[node name="RestartConfirmation" parent="." index="1" unique_id=168951455 instance=ExtResource("3_le02u")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Restart the game?"
+title = "Confirm Restart"
+
+[node name="MainMenuConfirmation" parent="." index="2" unique_id=721748375 instance=ExtResource("3_le02u")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Exit to the main menu?"
+title = "Confirm Exit"
+
+[node name="ExitConfirmation" parent="." index="3" unique_id=153915236 instance=ExtResource("3_le02u")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Exit the game?"
+title = "Confirm Exit"
+
+[connection signal="pressed" from="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="ContentContainer/BoxContainer/MenuButtonsMargin/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]

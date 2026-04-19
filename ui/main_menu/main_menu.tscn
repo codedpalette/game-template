@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e8t4i")
-game_scene_path = "uid://dyr5eybgqwiv5"
+game_scene_path = "uid://bqdwefbywnher"
 credits_packed_scene = ExtResource("2_qt1dd")
 
 [node name="MenuContainer" type="MarginContainer" parent="." unique_id=1912048201]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bqdwefbywnher"]
+
+[ext_resource type="Script" uid="uid://c6444l3317yrn" path="res://ui/pause_menu/pause_menu_controller.gd" id="1_4fuuu"]
+[ext_resource type="Script" uid="uid://bybvgvd5j368h" path="res://game/game.gd" id="1_dxrkv"]
+[ext_resource type="PackedScene" uid="uid://doupxnmle4065" path="res://ui/pause_menu/pause_menu.tscn" id="2_dxrkv"]
+[ext_resource type="Texture2D" uid="uid://dmanl5y5ij86t" path="res://assets/icon.svg" id="4_u5opy"]
+
+[node name="Game" type="Node" unique_id=992012200]
+script = ExtResource("1_dxrkv")
+
+[node name="PauseMenuController" type="Node" parent="." unique_id=2078296717]
+script = ExtResource("1_4fuuu")
+pause_menu_packed = ExtResource("2_dxrkv")
+
+[node name="World" type="Node2D" parent="." unique_id=997867853]
+
+[node name="Sprite2D" type="Sprite2D" parent="World" unique_id=2056025584]
+texture_filter = 6
+position = Vector2(640, 360)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_u5opy")
